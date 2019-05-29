@@ -1,0 +1,42 @@
+execute pathogen#infect()
+colorscheme default
+"set encoding=iso-8859-1
+set encoding=utf-8
+set mouse-=a 
+set nowrap
+set noundofile
+set nu
+
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+let g:NERDTreeDirArrows=0
+nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
+inoremap $t <><esc>i
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+" Compiler = f(language)
+"au BufRead * try | execute "compiler ".&filetype | catch /./ | endtry
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+"nnoremap <leader>s :ConqueTermTab bash<CR>
+
+set nofoldenable    " disable folding
+let vim_markdown_preview_github=1
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'git://github.com/eshion/vim-sync'
+call vundle#end()            " required
+
+map <leader>bb  :bn<cr>
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
