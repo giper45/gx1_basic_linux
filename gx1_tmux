@@ -1,0 +1,16 @@
+ # remap prefix to Control + a
+ set -g prefix C-a
+ # # bind 'C-a C-a' to type 'C-a'
+ bind C-a send-prefix
+ unbind C-b
+
+ bind -n M-Left select-pane -L
+ bind -n M-Right select-pane -R
+ bind -n M-Up select-pane -U
+ bind -n M-Down select-pane -D
+
+ set-window-option -g window-status-current-bg yellow
+ set -g mouse off
+
+ #source ~/.bashrc
+ bind D source-file ~/.tmux/dev

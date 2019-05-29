@@ -1,0 +1,26 @@
+alias ll="ls --color=always -lhaG"
+alias f="find . -name "
+
+
+function vf() {
+    vim $(find . -name $1 ) 2>/dev/null
+}
+
+alias ev="vim ~/.vim_runtime/my_configs.vim"
+alias eb="vim ~/.bashrc && source ~/.bashrc"
+alias es="vim ~/.ssh/config"
+alias xclip='xclip -selection c'
+
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+
+function fastpush() {
+  git pull; git add -A; git commit -am "$1";  git push origin master;
+}
+
+
+
+alias d2u="find . -type f -print0 | xargs -0 dos2unix"
+
+alias rdesktop="rdesktop -g 1600x1024"
+alias geturls='grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq'

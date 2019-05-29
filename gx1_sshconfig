@@ -1,0 +1,4 @@
+#Host example
+#   HostName example_hostname
+#   User example_user
+#   IdentityFile example_key_path
