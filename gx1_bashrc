@@ -24,3 +24,4 @@ alias d2u="find . -type f -print0 | xargs -0 dos2unix"
 
 alias rdesktop="rdesktop -g 1600x1024"
 alias geturls='grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq'
+alias lssh="cat ~/.ssh/config | grep 'Host\ '|cut -d' ' -f2 "
