@@ -6,4 +6,7 @@ cp ./gx1_bashrc ~/.bashrc
 cp ./gx1_vimrc  ~/.vim_runtime/my_configs.vim
 cp gx1_tmux ~/.tmux.conf
 cp ./gx1_sshconfig ~/.ssh/config
+# Create git dir
+mkdir ~/git
+
 echo "Installed!"

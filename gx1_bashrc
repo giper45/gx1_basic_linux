@@ -21,7 +21,13 @@ function fastpush() {
 
 
 alias d2u="find . -type f -print0 | xargs -0 dos2unix"
+function fastpush() {
+   git pull; git add -A; git commit -am "$1";  git push origin master;
+}
+
+ 
 
 alias rdesktop="rdesktop -g 1600x1024"
 alias geturls='grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq'
 alias lssh="cat ~/.ssh/config | grep 'Host\ '|cut -d' ' -f2 "
+alias ggit="cd ~/git"
