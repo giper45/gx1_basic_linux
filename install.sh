@@ -6,6 +6,7 @@ cp ./gx1_bashrc ~/.bashrc
 cp ./gx1_vimrc  ~/.vim_runtime/my_configs.vim
 cp gx1_tmux ~/.tmux.conf
 cp ./gx1_sshconfig ~/.ssh/config
+cp -r snippets/ ~/.vim/snippets
 # Create git dir
 mkdir ~/git
 

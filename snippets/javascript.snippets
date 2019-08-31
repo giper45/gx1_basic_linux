@@ -1,0 +1,95 @@
+snippet mocha # "Init mocha testing"
+	const expect = require('chai').expect;
+	const helper = require('../helper');
+	const testModule = require('../../app/data/config.js');
+	const appRoot = require('app-root-path');
+	const appChecker = require(`\${appRoot}/app/util/AppChecker`);
+
+	describe('${1}', () => {
+	before((done) => {
+		appChecker.initErrors();
+		appChecker.initConditions();
+		done();
+	});
+	beforeEach((done) => {
+		helper.start();
+		done();
+	});
+	it('${2}', (done) => {
+		expect(true).to.be.ok;
+		done();
+	});
+
+	afterEach((done) => {
+		done();
+	});
+	after((done) => {
+		done();
+	});
+	});
+endsnippet
+snippet log # "generic log"
+	console.log(${1});
+endsnippet
+snippet ifelse # If thenelse 
+	if (${1}) {
+		${2}
+	} else {
+		${3}
+	}
+endsnippet
+snippet fn # Fucntion
+	function ${1} (${2}) {
+		${3}
+	}
+endsnippet
+snippet sfn # Scope function
+	$scope.${1} = function(${2}) {
+	}
+endsnippet
+snippet afn # Arrow function 
+	(${1) => ${2}
+endsnippet
+snippet noti # Notification library
+	Notification('${1}', 'warning');
+endsnippet
+snippet aconfirm # Angular confirm dialog component
+	function openConfirmDelete() {
+	var modalInstance = $uibModal.open({
+	component: 'modalComponent',
+	resolve: {
+	lab: function () {
+	return ${1};
+		}
+	}
+	});
+	//Cancel lab
+	//Success
+	modalInstance.result.then(function () {
+			${2}
+		}, function() {});
+	}
+endsnippet
+snippet anpro # Angular Promise response with notification
+	.then(function successCallback(response) {
+		Notification("Success");
+	},function errorCallback(response) {
+		Notification({message:"Some error"}, 'error');
+	})
+endsnippet
+
+snippet waterfall # Waterfall nodejs
+	async.waterfall([
+		(cb) => Checker.checkParams(req.params, ['reponame', 'labname'], cb),
+		(cb) => Checker.checkString(req.params.reponame, cb),
+		(cb) => Checker.checkString(req.params.labname, cb),
+		(data, cb) => dockerImages.getImagesLab(req.params.reponame, req.params.labname, allImages, cb)
+		}], (results, err) => {
+		httpHelper.response(res, err, { images: results });
+		});
+endsnippet
+
+snippet alocation # Angular loaction
+	$location.url(${1});
+endsnippet
+

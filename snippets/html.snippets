@@ -1,0 +1,72 @@
+snippet fg "Form - group" bw
+	<div class="form-group">
+	 <label class="control-label col-sm-2" for="${1:namelabel}">${2:label}</label>
+	 <div class="col-sm-10">
+	 <input type="text" class="form-control" ng-model="$3" id="${4:id}" >
+	 </div>
+	</div>
+endsnippet
+
+snippet finli " Form bootstrap inline" 
+	<form class="form-inline">
+		<input type="text" class="form-control mb-2 mr-sm-2" id="${1}" >
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+endsnippet
+
+snippet btn "Bootstrap button" bw
+	<button class="btn btn-default" ng-click="${1:namefn}()"> ${2} </button>
+endsnippet
+snippet row # Bootstrap row
+	<div class="row">
+		${1}
+	</div>
+endsnippet
+snippet col # Bootstrap row
+		<div class="col">
+			${1}
+		</div>
+snippet
+snippet bplay # Bootstrap button close
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-play"></span> ${1}
+	</button>
+endsnippet
+snippet bclose # Bootstrap button close
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-remove-circle"></span> ${1}
+	</button>
+endsnippet
+snippet bsave # Bootstrap button close
+	<button type="button" class="btn btn-default">
+		<span class="glyphicon glyphicon-floppy-save"></span> ${1}
+	</button>
+endsnippet
+
+snippet btable # Bootstrap table
+	<table class="table table-hover ">
+		<tbody>
+			<tr ng-repeat="l in r.${1} | filter :{name:filterName}">
+				<td class="text-center"><a  href="#" ng-click="ctrl.getURL(r.name, l.name)"> {{l.name }}</a></td>
+				<td class="text-center">{{l.informations.description}}</td>
+			</tr>
+		</tbody>
+	</table>
+snippet afilter # Form filter for angular
+	<form role="form">
+		<div class="form-group input-group">
+			<input type="text" class="form-control" ng-model="filterName" placeholder="Name filter">
+				<span class="input-group-btn">
+					<div class="btn btn-default"><i class="fa fa-search"></i>
+					</div>
+				</span>
+			</div>
+		</form>
+endsnippet
+
+snippet aactions # Angularjs actions
+		<div class="row">
+			<div class="col-sm-6 text-center" ><a class="editing-components" >  <span uib-popover="Edit" popover-trigger="'mouseenter'"  ng-click="edit${1}(l)" class="fa fa-pencil"> </span> </a> </div>
+			<div class="col-sm-6 text-center"><a class="editing-components" ><span uib-popover="Remove" popover-trigger="'mouseenter'" class="fa fa-remove" ng-click="remove${1}(l)"> </span> </a> </div>
+		</div>
+endsnippet
