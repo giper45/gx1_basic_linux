@@ -14,3 +14,4 @@
 
  #source ~/.bashrc
  bind D source-file ~/.tmux/dev
+ set -g default-terminal "screen-256color"
