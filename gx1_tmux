@@ -9,7 +9,6 @@
  bind -n M-Up select-pane -U
  bind -n M-Down select-pane -D
 
- set-window-option -g window-status-current-bg yellow
  set -g mouse off
 
  #source ~/.bashrc
